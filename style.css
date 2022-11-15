@@ -1,0 +1,83 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: lavender;
+}
+
+header {
+    text-align: center;
+}
+
+#startTimer {
+    display: flex;
+    /* flex-direction: row; */
+}
+
+.startBtn {
+
+
+}
+
+#timerCount {
+
+}
+
+.board {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    border: 1px solid black;
+    border-radius: 2%;
+    width: 1000px;
+    height: 885px;
+ 
+}
+
+.firstRow {
+    display: flex;
+    /* border: 1px solid black; */
+    height: 220px;
+}
+
+.secondRow {
+    display: flex;
+    /* border: 1px solid black; */
+    height: 220px;
+}
+
+.thirdRow {
+    display: flex;
+    /* border: 1px solid black; */
+    height: 220px;
+}
+
+.fourthRow {
+    display: flex;
+    /* border: 1px solid black; */
+    height: 220px;
+}
+
+.fifthRow {
+    display: flex;
+    /* border: 1px solid black; */
+    height: 220px;
+}
+
+.card {
+    display: flex;
+    background-color: rgb(86, 22, 214);
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 10%;
+    height: 200px;
+    width: 180px;
+    margin: 10px;
+}
+
+/* @media (min-width: 480px) {
+    .text-design {
+      font-size: 24px;
+    }
+  } */
+  /* DON'T FORGET RESPONSIVENESS */
+  

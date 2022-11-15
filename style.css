@@ -11,16 +11,19 @@ header {
 
 #startTimer {
     display: flex;
-    /* flex-direction: row; */
+    flex-direction: column;
+    align-items: center;
 }
 
-.startBtn {
-
-
+#startBtn {
+    width: 75px;
+    height: 30px;
+    background-color: mediumpurple;
+    border-radius: 10%;
 }
 
 #timerCount {
-
+    
 }
 
 .board {

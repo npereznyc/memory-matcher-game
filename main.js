@@ -5,7 +5,8 @@ console.log(card)
 // card.addEventListener('click', flipCard);
 
 function flipCard(){
-    card.ClassList.toggle('flipCard');
+    // card.ClassList.toggle('flipCard');
+    console.log('card clicked')
 }
 
 // body.addEventListener('click', e => {

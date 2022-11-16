@@ -1,86 +1,73 @@
-const body = document.querySelector('body')
-let card= document.querySelectorAll('.singleCard')
 let timer=document.querySelector('#timerCount'); //timer number that will increment 
 const gameOver=document.createElement('h2')
 
 
 window.onload=function (){
-    let seconds = 00;
-    let minutes = 00;
-    let appendMinutes = document.getElementById("minutes")
-    let appendSeconds = document.getElementById("seconds")
-    console.log(appendMinutes)
-    console.log(appendSeconds)
+    let seconds = 0;
+    let minutes = 0;
+    let displayMinutes = document.querySelector("#minutes")
+    let displaySeconds = document.querySelector("#seconds")
     let Interval ;
-
-
-// startBtn.addEventListener('click', function()) {
-//     interval=setInterval(startTimer, 1000)()
-        // if (timer>=5) {
-        //     clearInterval(interval);
-        //     // updateTimer(0);
-        //     endGame();
-        // } else {
-        //     time+=1;
-        //     updateTimer(time);
-        // }
     
-    
-startBtn.onclick=function(){
-    clearInterval(Interval);
+startBtn.addEventListener('click', function() {
+    // clearInterval(Interval);
     Interval=setInterval(startTimer, 1000);
-}
+})
     
 function startTimer() {
     seconds++;
     if(seconds <=9) {
-        appendSeconds.innerHTML="0"+seconds;
+        displaySeconds.innerHTML="0"+seconds;
     }
     if(seconds>9) {
-        appendSeconds.innerHTML = seconds;
+        displaySeconds.innerHTML = seconds;
     }
     if(seconds>59) {
-        console.log('minutes');
         minutes++
-        appendMinutes.innerHTML="0"+minutes;
+        displayMinutes.innerHTML="0"+minutes;
         seconds=0;
-        appendSeconds.innerHTML="0"+0;
+        displaySeconds.innerHTML="0"+0;
     }
-    if(minutes>9) {
-        appendMinutes.innerHTML=minutes;
+    if(minutes>=5) {
+        clearInterval(Interval);
+        endGame();
+        displaySeconds.innerHTML="0"+0;
+        displayMinutes.innerHTML="0"+0;
     }
 }
 }
-    
-    // let time=Number(timer.textContent);
-    // function updateTimer(num) {
-    //     timer.textContent=num; 
-    // }
-    // startTimer.disabled=true;
+
     function endGame () {
         gameOver.innerText="Time is up, you've lost the game. Refresh the page to play again!"
         return document.querySelector('#messageSection').appendChild(gameOver)
    }
-// })
-// }
 
 
-
+let allCards=document.querySelectorAll('.card')
+let card= document.querySelectorAll('.singleCard')
+let clickedCards=[]
 
 card.forEach(function (cardClicked) {
     cardClicked.addEventListener('click', function() {
+        // this.classList.add('clicked')
         let card1=cardClicked.className
         console.log(card1)
+        clickedCards.push(card1);
+        console.log(clickedCards)
+        if(clickedCards.length=2) {
+            checkMatch;
+        }
+        //if array.length=2, call to function;
+        //checkMatch(array)
+        })
     })
-})
+    //array in global scope
 
-
-
-
-
-
-function clickCard(){
-    // card.ClassList.toggle('flipCard');
-    // console.log('card clicked')
-    
+function checkMatch() {
+    if(card1 === card2) {
+        score++;
+            if(score ==10){
+                console.log("You win!")
+            }
+    }
 }

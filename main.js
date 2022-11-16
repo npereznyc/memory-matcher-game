@@ -53,7 +53,7 @@ card.forEach(function (cardClicked) {
         let card1=cardClicked.className
         // console.log(card1)
         clickedCards.push(card1);
-        console.log(clickedCards)
+        // console.log(clickedCards)
         if(clickedCards.length===2) {
             checkMatch();
             clickedCards=[];
@@ -74,6 +74,4 @@ card.forEach(function (cardClicked) {
                 //     }
         }
     })
-    //array in global scope
-
 

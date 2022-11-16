@@ -54,20 +54,26 @@ card.forEach(function (cardClicked) {
         console.log(card1)
         clickedCards.push(card1);
         console.log(clickedCards)
-        if(clickedCards.length=2) {
-            checkMatch;
+        if(clickedCards.length===2) {
+            checkMatch();
         }
         //if array.length=2, call to function;
         //checkMatch(array)
         })
+        function checkMatch() {
+            if(clickedCards[0] == clickedCards[1]) {
+                console.log("match!")
+            } else {
+                console.log("no match")
+            }
+                // score++;
+                //     if(score ==10){
+                //         console.log("You win!")
+                //     } else {
+                //         console.log("no match")
+                //     }
+        }
     })
     //array in global scope
 
-function checkMatch() {
-    if(card1 === card2) {
-        score++;
-            if(score ==10){
-                console.log("You win!")
-            }
-    }
-}
+

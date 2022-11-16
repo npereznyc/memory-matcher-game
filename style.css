@@ -28,7 +28,7 @@ nav  {
 
 .timer {
     font-size: x-large;
-    /* align-self: flex-start; */
+    align-self: flex-start;
 }
 /* 
 .time {
@@ -36,7 +36,7 @@ nav  {
 } */
 
 #timerCount {
-    
+    align-self: flex-start;
 }
 
 .score {

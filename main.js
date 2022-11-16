@@ -1,25 +1,20 @@
-const card = document.querySelectorAll('.card');
 const body = document.querySelector('body')
-console.log(card)
+let card= document.querySelectorAll('.singleCard')
 
-// card.addEventListener('click', flipCard);
 
-function flipCard(){
-    // card.ClassList.toggle('flipCard');
-    console.log('card clicked')
-}
-
-// body.addEventListener('click', e => {
-//     if(e == card) {
-//         flipCard();
-//     } else {
-//         console.log('no match');
-//         return
-//     }
-// })
-
-document.querySelectorAll('.card').forEach(item => {
-    item.addEventListener('click', event => {
-        flipCard()
+card.forEach(function (i) {
+    i.addEventListener('click', function() {
+        console.log(i.className)
     })
 })
+
+
+
+
+
+
+function clickCard(){
+    // card.ClassList.toggle('flipCard');
+    // console.log('card clicked')
+    
+}

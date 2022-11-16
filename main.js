@@ -51,14 +51,14 @@ card.forEach(function (cardClicked) {
     cardClicked.addEventListener('click', function() {
         // this.classList.add('clicked')
         let card1=cardClicked.className
-        console.log(card1)
+        // console.log(card1)
         clickedCards.push(card1);
         console.log(clickedCards)
         if(clickedCards.length===2) {
             checkMatch();
+            clickedCards=[];
         }
-        //if array.length=2, call to function;
-        //checkMatch(array)
+  
         })
         function checkMatch() {
             if(clickedCards[0] == clickedCards[1]) {

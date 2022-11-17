@@ -1,5 +1,6 @@
 let timer=document.querySelector('#timerCount'); //timer number that will increment 
 const gameOver=document.createElement('h2')
+const youWin=document.createElement('h2')
 
 
 window.onload=function (){
@@ -10,7 +11,7 @@ window.onload=function (){
     let Interval ;
     
 startBtn.addEventListener('click', function() {
-    // clearInterval(Interval);
+    clearInterval(Interval); //prevents timer from incrementing faster if button is clicked again.
     Interval=setInterval(startTimer, 1000);
 })
     
@@ -28,7 +29,7 @@ function startTimer() {
         seconds=0;
         displaySeconds.innerHTML="0"+0;
     }
-    if(minutes>=5) {
+    if(minutes>=2) {
         clearInterval(Interval);
         endGame();
         displaySeconds.innerHTML="0"+0;
@@ -41,11 +42,17 @@ function startTimer() {
         gameOver.innerText="Time is up, you've lost the game. Refresh the page to play again!"
         return document.querySelector('#messageSection').appendChild(gameOver)
    }
+   function win() {
+    youWin.innerText="You've matched all the cards! You win!"
+    return document.querySelector('#messageSection').appendChild(youWin)
+}
 
 
 let allCards=document.querySelectorAll('.card')
 let card= document.querySelectorAll('.singleCard')
 let clickedCards=[]
+let startingScore=document.querySelector('#score')
+let score=Number(startingScore.textContent)
 
 card.forEach(function (cardClicked) {
     cardClicked.addEventListener('click', function() {
@@ -58,20 +65,26 @@ card.forEach(function (cardClicked) {
             checkMatch();
             clickedCards=[];
         }
-  
-        })
-        function checkMatch() {
-            if(clickedCards[0] == clickedCards[1]) {
-                console.log("match!")
-            } else {
-                console.log("no match")
-            }
-                // score++;
-                //     if(score ==10){
-                //         console.log("You win!")
-                //     } else {
-                //         console.log("no match")
-                //     }
+    })
+    function updateScore(num) {
+        startingScore.textContent=num;
         }
+    function checkMatch() {
+        if(clickedCards[0] == clickedCards[1]) {
+            console.log("match!");
+            //keep cards flipped over
+            score+=1;
+            updateScore(score);
+             if(score ==10){
+                win()
+                 console.log("You win!")
+             } 
+             }
+         else {
+            console.log("no match")
+            //flip cards back
+        }
+    }
+        
     })
 

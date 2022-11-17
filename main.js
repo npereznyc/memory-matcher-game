@@ -38,13 +38,14 @@ function startTimer() {
 }
 }
 
-    function endGame () {
-        gameOver.innerText="Time is up, you've lost the game. Refresh the page to play again!"
-        return document.querySelector('#messageSection').appendChild(gameOver)
-   }
-   function win() {
-    youWin.innerText="You've matched all the cards! You win!"
-    return document.querySelector('#messageSection').appendChild(youWin)
+function endGame () {
+    gameOver.innerText="Time is up, you've lost the game. Refresh the page to play again!"
+    return document.querySelector('#messageSection').appendChild(gameOver)
+}
+
+function win() {
+youWin.innerText="You've matched all the cards! You win!"
+return document.querySelector('#messageSection').appendChild(youWin)
 }
 
 
@@ -66,15 +67,19 @@ card.forEach(function (cardClicked) {
             clickedCards=[];
         }
     })
+    
     function updateScore(num) {
         startingScore.textContent=num;
         }
-    function checkMatch() {
+    
+        function checkMatch() {
         if(clickedCards[0] == clickedCards[1]) {
             console.log("match!");
             //keep cards flipped over
             score+=1;
             updateScore(score);
+            // clickedCards[0].removeEventListener('click', function(){
+            // })
              if(score ==10){
                 win()
                  console.log("You win!")
@@ -85,6 +90,5 @@ card.forEach(function (cardClicked) {
             //flip cards back
         }
     }
-        
     })
 

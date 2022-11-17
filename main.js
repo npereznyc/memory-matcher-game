@@ -48,7 +48,8 @@ youWin.innerText="You've matched all the cards! You win!"
 return document.querySelector('#messageSection').appendChild(youWin)
 }
 
-
+const front = document.querySelector('#front')
+const back = document.querySelector('#back')
 let allCards=document.querySelectorAll('.card')
 let card= document.querySelectorAll('.singleCard')
 let clickedCards=[]
@@ -57,7 +58,7 @@ let score=Number(startingScore.textContent)
 
 card.forEach(function (cardClicked) {
     cardClicked.addEventListener('click', function() {
-        // this.classList.add('clicked')
+        handleFlip(); //this is flipping only the first card
         let card1=cardClicked.className
         // console.log(card1)
         clickedCards.push(card1);
@@ -68,6 +69,12 @@ card.forEach(function (cardClicked) {
         }
     })
     
+    function handleFlip () {
+        front.classList.toggle('flipped')
+        back.classList.toggle('flipped')
+        console.log('card flipped')
+    }
+
     function updateScore(num) {
         startingScore.textContent=num;
         }

@@ -58,22 +58,30 @@ let score=Number(startingScore.textContent)
 
 card.forEach(function (cardClicked) {
     cardClicked.addEventListener('click', function() {
-        handleFlip(); //this is flipping only the first card
+        // flip();
         let card1=cardClicked.className
-        // console.log(card1)
+        console.log(card1)
         clickedCards.push(card1);
-        // console.log(clickedCards)
+        console.log(clickedCards)
         if(clickedCards.length===2) {
             checkMatch();
             clickedCards=[];
         }
     })
+
     
-    function handleFlip () {
-        front.classList.toggle('flipped')
-        back.classList.toggle('flipped')
+        function flip () {
+        let flippedCard=document.querySelectorAll('.card')
+        console.log(flippedCard)
+        flippedCard.classList.add('flip')
         console.log('card flipped')
-    }
+        }
+
+        function flipBack () {
+        let flippedCard=document.querySelectorAll('.card')
+        flippedCard.classList.remove('flip')
+        console.log('card flipped back')
+        }
 
     function updateScore(num) {
         startingScore.textContent=num;
@@ -93,6 +101,7 @@ card.forEach(function (cardClicked) {
              } 
              }
          else {
+            // flipBack();
             console.log("no match")
             //flip cards back
         }

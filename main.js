@@ -55,10 +55,11 @@ let card= document.querySelectorAll('.singleCard')
 let clickedCards=[]
 let startingScore=document.querySelector('#score')
 let score=Number(startingScore.textContent)
+let cardFront=document.querySelectorAll('.cardFront')
 
 card.forEach(function (cardClicked) {
     cardClicked.addEventListener('click', function() {
-        // flip();
+        flip();
         let card1=cardClicked.className
         console.log(card1)
         clickedCards.push(card1);
@@ -69,19 +70,25 @@ card.forEach(function (cardClicked) {
         }
     })
 
-    
         function flip () {
-        let flippedCard=document.querySelectorAll('.card')
-        console.log(flippedCard)
-        flippedCard.classList.add('flip')
-        console.log('card flipped')
-        }
+            allCards.forEach(function(cardFlipped) { 
+                cardFlipped.addEventListener('click', function() {
+                    cardFlipped.classList.add('flip');
+                console.log('card flipped');
+            })
+            // let flippedCard=document.querySelectorAll('.card')
+            // // console.log(flippedCard)
+            // flippedCard.classList.add('flip')
+            // console.log('card flipped')
+        })
+    }
 
         function flipBack () {
-        let flippedCard=document.querySelectorAll('.card')
-        flippedCard.classList.remove('flip')
-        console.log('card flipped back')
-        }
+            allCards.forEach(function(cardFlipped) { 
+                cardFlipped.classList.remove('flip')
+                console.log('card flipped back')
+        })
+    }
 
     function updateScore(num) {
         startingScore.textContent=num;
@@ -101,10 +108,9 @@ card.forEach(function (cardClicked) {
              } 
              }
          else {
-            // flipBack();
+            flipBack();
             console.log("no match")
             //flip cards back
         }
     }
-    })
-
+})

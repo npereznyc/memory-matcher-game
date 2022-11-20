@@ -15,7 +15,7 @@ This is a memory matching game with names and photos of yoga poses. A great game
 #
 
 ## Getting Sarted
-☐ [Link to deployed game](https://github.com/npereznyc/memory-matcher-game)
+☐ [Link to deployed game](https://npereznyc.github.io/memory-matcher-game/)
 
 ☐ To play the game, simply load the page and click the start button. You have 2 minutes to match all of the poses.
 #

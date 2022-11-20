@@ -69,16 +69,15 @@ window.onload=function (){
     
     function checkMatch() {
     if(clickedCards[0] == clickedCards[1]) {
-        console.log("match!");
         score+=1;
         updateScore(score);
-        // clickedCards[0].removeEventListener('click', function(){
-        // })
         if(score ==10){
         win()
         } 
     } else {
-        setTimeout (flipBack, 1000);
+        setTimeout (flipBack, 500);
+        score=0;
+        updateScore('0');
         console.log("no match")
     }
     }

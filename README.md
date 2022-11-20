@@ -13,6 +13,14 @@ This is a memory matching game with names and photos of yoga poses. A great game
 ## Technologies Used:
 ☐ HTML, CSS, and JavaScript
 
-☐ Getting Started: In this section include the link to your deployed game and any instructions you deem important.
 
-☐ Next Steps: Planned future enhancements (icebox items).
+## Getting Sarted
+☐ [Link to deployed game](https://github.com/npereznyc/memory-matcher-game)
+
+☐ To play the game, simply load the page and click the start button. You have 2 minutes to match all of the poses.
+
+
+## Next Steps:
+☐ Shuffle cards on refresh so that they are in new locations.
+
+☐ Create an easier level where the cards don't all flip back if you get one wrong.

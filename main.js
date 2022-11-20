@@ -16,20 +16,13 @@ window.onload=function (){
 
 
     let allCards=document.querySelectorAll('.card')
-    let cardFront=document.querySelectorAll('.cardFront')
-    let card= document.querySelectorAll('.singleCard')
     let clickedCards=[]
-    let flippedCards=[]
 
     allCards.forEach(function (cardClicked) {
         cardClicked.addEventListener('click', function() {
-            // flip();
             cardClicked.classList.add('flip');
-                // console.log(cardClicked)
             let cardClass=cardClicked.className
-                // console.log(cardClass)
             clickedCards.push(cardClass);
-                // console.log(clickedCards)
             if(clickedCards.length===2) {
             checkMatch();
             clickedCards=[];
@@ -42,30 +35,14 @@ window.onload=function (){
                 cardClicked.classList.remove('flip');
                 console.log(cardClicked)
         })
-        //this is flipping back all of the cards that have been flipped, even the ones that have been matches.
-
-        // for (let i = 0; i < clickedCards.length; i++) {
-        //     clickedCards[i].classList.remove('flip');
-        //     console.log(clickedCards[i])
-        // }
-                // console.log('card flipped back')
-                // clickedCards=[];
-        // clickedCards.forEach(function(cardClicked) { 
-            // console.log(clickedCards)
-                // clickedCards.classList.remove('flip')
-                    // console.log('card flipped back')
-        // })
-
-  
     }
-
 
     let startingScore=document.querySelector('#score')
     let score=Number(startingScore.textContent)
     
     function updateScore(num) {
         startingScore.textContent=num;
-        }
+    }
     
     function checkMatch() {
     if(clickedCards[0] == clickedCards[1]) {
@@ -105,7 +82,7 @@ window.onload=function (){
             displayMinutes.innerHTML="0"+0;
         }
     }
-})
+    })
 }
 
 function endGame () {

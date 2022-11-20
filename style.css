@@ -1,7 +1,6 @@
 body {
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
     background-color: lavender;
 }
 
@@ -35,11 +34,8 @@ p {
 
 nav  {
     display: inline-flex;
-    /* flex-direction: column; */
     align-items: center;
     justify-content: center;
-    /* flex: 1; */
-    /* margin-left: 400px; */
 }
 
 #startBtn {
@@ -58,10 +54,6 @@ nav  {
     align-self: flex-start;
 }
 
-.time {
-
-}
-
 #minutes {
     margin-left: 10px;
 }
@@ -70,10 +62,6 @@ nav  {
    font-size: x-large;
    margin-left: 200px;
 }
-/* 
-#score {
-    margin-right: 200px;
-} */
 
 .board {
     display: grid;
@@ -117,10 +105,6 @@ nav  {
     transform: rotateY(180deg);
 }
 
-.cardFront {
-    /* transform: rotateY(0deg); */
-}
-
  img {
     border-radius: 10%;
     width: 100%;
@@ -139,4 +123,3 @@ nav  {
         grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     }
 }
-

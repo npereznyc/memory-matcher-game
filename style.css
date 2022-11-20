@@ -63,6 +63,10 @@ nav  {
    margin-left: 200px;
 }
 
+#messageSection {
+    text-align: center;
+}
+
 .board {
     display: grid;
     position: relative;

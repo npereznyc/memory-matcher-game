@@ -13,6 +13,26 @@ header {
     text-align: center;
 }
 
+.heading1 {
+    font-family: 'Brittany Signature', sans-serif;
+    font-size: 55px;
+    letter-spacing: 5px;
+    line-height: 25px;
+    color: #041F60;
+}
+
+.heading2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    letter-spacing: 2px;
+    font-size: 70px;
+    line-height: 20px;
+    color: #041F60;
+}
+
+p {
+    font-size: 20px;
+}
+
 nav  {
     display: inline-flex;
     /* flex-direction: column; */
@@ -24,10 +44,13 @@ nav  {
 
 #startBtn {
     align-self: center;
-    width: 75px;
-    height: 30px;
-    background-color: mediumpurple;
+    width: 100px;
+    height: 40px;
+    background-color: #041F60;
     border-radius: 10%;
+    color: #F4C21C;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 30px;
 }
 
 .timer {

@@ -25,58 +25,40 @@ window.onload=function (){
         cardClicked.addEventListener('click', function() {
             // flip();
             cardClicked.classList.add('flip');
-                console.log(cardClicked)
-            let card1=cardClicked.className
-                console.log(card1)
-            clickedCards.push(card1);
-                console.log(clickedCards)
+                // console.log(cardClicked)
+            let cardClass=cardClicked.className
+                // console.log(cardClass)
+            clickedCards.push(cardClass);
+                // console.log(clickedCards)
             if(clickedCards.length===2) {
             checkMatch();
             clickedCards=[];
             }
         })
     })
-
-    // card.forEach(function (cardClicked) {
-    //     cardClicked.addEventListener('click', function() {
-    //         flip();
-    //         let card1=cardClicked.className
-    //             // console.log(card1)
-    //         clickedCards.push(card1);
-    //             // console.log(clickedCards)
-    //         if(clickedCards.length===2) {
-    //         checkMatch();
-    //             // if (clickedCards[0]!==clickedCards[1]) {
-    //             //     cardFlipped.classList.remove('flip')
-    //             //     console.log('card flipped back')
-    //         clickedCards=[];
-    //         }
-    //     })
-    // })
-
-    
-    // function flip () {
-    //     allCards.forEach(function(cardFlipped) { 
-    //         cardFlipped.addEventListener('click', function() {
-    //             cardFlipped.classList.add('flip');
-    //             console.log(cardFlipped)
-    //         })
-    //     })
-    // }
-    //array of cards that have been flipped - if there's no match, loop through and flip them back
-    // function flipBack () {
-    //     allCards.forEach(function(cardFlipped) { 
-    //             cardFlipped.classList.remove('flip')
-    //                 console.log('card flipped back')
-    //     })
-    // }
      
     function flipBack () {
-        allCards.forEach(function(cardClicked) { 
-                cardClicked.classList.remove('flip')
-                    console.log('card flipped back')
+        allCards.forEach(function (cardClicked) {
+                cardClicked.classList.remove('flip');
+                console.log(cardClicked)
         })
+        //this is flipping back all of the cards that have been flipped, even the ones that have been matches.
+
+        // for (let i = 0; i < clickedCards.length; i++) {
+        //     clickedCards[i].classList.remove('flip');
+        //     console.log(clickedCards[i])
+        // }
+                // console.log('card flipped back')
+                // clickedCards=[];
+        // clickedCards.forEach(function(cardClicked) { 
+            // console.log(clickedCards)
+                // clickedCards.classList.remove('flip')
+                    // console.log('card flipped back')
+        // })
+
+  
     }
+
 
     let startingScore=document.querySelector('#score')
     let score=Number(startingScore.textContent)
@@ -95,13 +77,12 @@ window.onload=function (){
         if(score ==10){
         win()
         } 
-        } else {
-            setTimeout (flipBack, 1000);
-            console.log("no match")
-            //flip cards back
-        }
+    } else {
+        setTimeout (flipBack, 1000);
+        console.log("no match")
     }
-    })
+    }
+    
     
     
     function startTimer() {
@@ -125,6 +106,7 @@ window.onload=function (){
             displayMinutes.innerHTML="0"+0;
         }
     }
+})
 }
 
 function endGame () {

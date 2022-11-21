@@ -33,7 +33,6 @@ window.onload=function (){
     function flipBack () {
         allCards.forEach(function (cardClicked) {
                 cardClicked.classList.remove('flip');
-                console.log(cardClicked)
         })
     }
 
@@ -55,7 +54,6 @@ window.onload=function (){
         setTimeout (flipBack, 500);
         score=0;
         updateScore('0');
-        console.log("no match")
     }
     }
     

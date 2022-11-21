@@ -24,3 +24,5 @@ This is a memory matching game with names and photos of yoga poses. A great game
 ☐ Shuffle cards on refresh so that they are in new locations.
 
 ☐ Create an easier level where the cards don't all flip back if you get one wrong.
+
+☐ Improve mobile responsiveness.
